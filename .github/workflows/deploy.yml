@@ -15,17 +15,10 @@ permissions:
   pages: write
   id-token: write
 
-# Allow one concurrent deployment
-concurrency:
-  group: 'pages'
-  cancel-in-progress: true
 
 jobs:
   # Single deploy job since we're just deploying
   build:  
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
   
     steps:
@@ -51,10 +44,9 @@ jobs:
           # Artifact name
           name: github-pages
           path: './dist'
+          
+          
   deploy:  
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Download a Build Artifact
