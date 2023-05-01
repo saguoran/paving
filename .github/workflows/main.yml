@@ -1,31 +1,4 @@
-name: CI
-
-on:
-  push:
-    branches: [ main ]
-  workflow_dispatch:
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v3
-
-      - uses: pnpm/action-setup@v2
-        with:
-          version: 8.3.1
-      - name: Install dependencies
-        run: pnpm install
-        
-      - name: build project
-        run: pnpm run build
-
-      - name: deploy pages
-        uses: JamesIves/github-pages-deploy-action@v4.4.1
-        with:
-          branch: gh-pages
-          folder: dist# Simple workflow for deploying static content to GitHub Pages
+# Simple workflow for deploying static content to GitHub Pages
 name: Deploy
 
 on:
