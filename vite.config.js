@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite';
 import solidPlugin from 'vite-plugin-solid';
+import staticAdapter from "solid-start-static";
 
 export default defineConfig({
   base: '/paving/',
