@@ -22,7 +22,7 @@ concurrency:
 
 jobs:
   # Single deploy job since we're just deploying
-  deploy:  
+  build:  
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -50,8 +50,13 @@ jobs:
         with:
           # Artifact name
           name: github-pages
-    # A file, directory or wildcard pattern that describes what to upload
           path: './dist'
+  deploy:  
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
       - name: Download a Build Artifact
         uses: actions/download-artifact@v2.1.1
         with:
