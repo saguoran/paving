@@ -1,5 +1,6 @@
 import ServiceCard from "../components/ServiceCard";
 
+import hero from "./../assets/hero1.jpg"
 import driveway1 from "./../assets/driveway1.jpg"
 import driveway2 from "./../assets/driveway2.jpg"
 import driveway3 from "./../assets/driveway3.png"
@@ -10,9 +11,10 @@ import masonry5 from "./../assets/masonry5.jpg"
 import MasonryTile from "../components/MasonryTile";
 
 function Home(props) {
+    const style=`background-size:cover; background: url(${hero}) center center;`;
     return (
         <>
-            <section class={"hero is-primary is-medium has-bg-img "} >
+            <section class={"hero is-primary is-medium"} style={style}>
 
                 <div class="hero-body ">
                     <div>
