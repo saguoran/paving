@@ -24,7 +24,8 @@ jobs:
           corepack prepare pnpm@next-8 --activate
       - name: Install dependencies
         run: pnpm install --no-frozen-lockfile
-
+      - name: Build Vite Project
+        run: pnpm run build
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v2
         with:
