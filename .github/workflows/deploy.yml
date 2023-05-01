@@ -46,13 +46,8 @@ jobs:
       - name: build project
         run: pnpm run build
         
-      - name: Setup Pages
-        uses: actions/configure-pages@v3
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+      - name: deploy pages
+        uses: JamesIves/github-pages-deploy-action@v4.4.1
         with:
-          # Upload dist repository
-          path: './dist'
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v1
+          branch: gh-pages
+          folder: dist/public
