@@ -1,4 +1,4 @@
-import { Router, Route, Routes, A } from "@solidjs/router";
+import { Route, Routes, A } from "@solidjs/router";
 import logo from './assets/gundam.png';
 import Home from './pages/Home';
 
@@ -7,7 +7,7 @@ function App() {
   const email = '';
   const location = '1750 Finch Ave E, North York, ON M2J 2X5';
   return (
-    <Router>
+    <>
       <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
           <A class="navbar-item" href="/">
@@ -84,7 +84,7 @@ function App() {
           Copyright &copy; 2023 By Gundam Inc
         </p>
       </footer>
-    </Router>
+    </>
   );
 }
 
