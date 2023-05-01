@@ -3,7 +3,7 @@ import solidPlugin from 'vite-plugin-solid';
 
 export default defineConfig({
   base: '/paving/',
-  plugins: [solidPlugin()],
+  plugins: [solid({ adapter: staticAdapter() })],
   server: {
     port: 3000,
   },
