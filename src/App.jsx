@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+import logo from './assets/gundam.png';
 import styles from './App.module.css';
 import { Router, Route, Routes, A } from "@solidjs/router";
 import Home from './pages/Home';
@@ -12,7 +12,7 @@ function App() {
       <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
           <A class="navbar-item" href="/">
-            <img src="/src/assets/gundam.png" width="28" height="28"> </img>
+            <img src={logo} width="28" height="28"> </img>
             <span class="title is-4 ml-1">Gundam</span>
           </A>
         </div>
@@ -36,6 +36,7 @@ function App() {
 
       <Routes>
         <Route path="/" component={() => <Home heading={'this is home'} />} />
+        <Route path="/paving" component={() => <Home heading={'this is home'} />} />
         <Route path="/services" component={() => <div>services</div>} />
         <Route path="/about" component={() => <div>about</div>} />
       </Routes>
@@ -43,7 +44,7 @@ function App() {
       <article class="is-flex is-justify-content-start is-align-items-center">
         <figure class="">
             <p class="image is-64x64">
-              <img src="src/assets/gundam.png" />
+              <img src={logo} />
             </p>
           </figure>
             <h3 class='title is-1 mx-2'>Gundam</h3>
