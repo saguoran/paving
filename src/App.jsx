@@ -2,10 +2,10 @@ import { Route, Routes, A } from "@solidjs/router";
 import logo from './assets/gundam.png';
 import Home from './pages/Home';
 
+const phone = '6031112298';
+const email = '';
+const location = '1750 Finch Ave E, North York, ON M2J 2X5';
 function App() {
-  const phone = '6031112298';
-  const email = '';
-  const location = '1750 Finch Ave E, North York, ON M2J 2X5';
   return (
     <>
       <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
