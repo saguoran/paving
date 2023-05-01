@@ -1,6 +1,5 @@
-import logo from './assets/gundam.png';
-import styles from './App.module.css';
 import { Router, Route, Routes, A } from "@solidjs/router";
+import logo from './assets/gundam.png';
 import Home from './pages/Home';
 
 function App() {
