@@ -23,7 +23,7 @@ jobs:
           corepack enable
           corepack prepare pnpm@next-8 --activate
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --frozen-lockfile
 
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v2
