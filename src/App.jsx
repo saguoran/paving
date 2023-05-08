@@ -1,34 +1,37 @@
 import { Route, Routes, A } from "@solidjs/router";
 import logo from './assets/gundam.png';
 import Home from './pages/Home';
+// import { baseUrl } from './../vite.config';
+// console.log()
+const baseUrl = '/paving/';
 const companyName = 'One General Construction';
 const phone = '6477401168';
-const email = '';
+const email = 'OneGeneralConstruction@gmail.com';
 const location = '47 Thorncliffe Park Dr, East York, ON M4H 1J5';
 function App() {
   return (
     <>
       <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
-          <A class="navbar-item" href="/">
+          <A class="navbar-item" href={baseUrl}>
             <img src={logo} width="28" height="28"> </img>
             <span class="title is-4 ml-1">{companyName}</span>
           </A>
         </div>
         <div class="navbar-menu is-active">
           <div class="navbar-end">
-            <A class="navbar-item" href="/services">
-              Services
-            </A>
-            <A class="navbar-item" href="/about">
-              About Us
-            </A>
-            <A class="navbar-item" href="/contact">
-              Contact Us
-            </A>
             <a class="navbar-item" href={'tel:' + phone}>
               <button class="button is-primary is-outlined">Call Us At {phone}</button>
             </a>
+            <A class="navbar-item" href={baseUrl+'services'}>
+              Services
+            </A>
+            <A class="navbar-item" href={baseUrl+'about'}>
+              About Us
+            </A>
+            <A class="navbar-item" href={baseUrl+'contact'}>
+              Contact Us
+            </A>
           </div>
         </div>
       </nav>
@@ -59,7 +62,7 @@ function App() {
             <span class="icon has-text-success">
               <ion-icon name="mail-outline"></ion-icon>
             </span>
-            <span>gundam@gundam.com</span>
+            <span>{email}</span>
           </div>
           <div class="icon-text">
             <span class="icon has-text-success">

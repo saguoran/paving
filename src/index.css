@@ -16,3 +16,8 @@ code {
   /* -webkit-text-stroke: 1px white; */
   text-shadow: -1px 0 grey, 0 1px grey;
 }
+
+.hero-background-image{
+  background-size: cover !important;
+  background-repeat: no-repeat !important; 
+}

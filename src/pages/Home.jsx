@@ -11,11 +11,11 @@ import masonry5 from "./../assets/images/5.jpeg"
 import MasonryTile from "../components/MasonryTile";
 
 function Home(props) {
-    const style={'background-size': 'contain', 'background-repeat': 'no-repeat', background: `url(${hero}) center center`};
+    const style={background: `url(${hero}) center center`};
     console.log(style)
     return (
         <>
-            <section class={"hero is-primary is-medium"} style={style}>
+            <section class={"hero is-primary is-medium hero-background-image"} style={style}>
 
                 <div class="hero-body">
                     <div>
