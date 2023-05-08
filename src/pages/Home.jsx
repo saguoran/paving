@@ -1,25 +1,25 @@
 import ServiceCard from "../components/ServiceCard";
 
-import hero from "./../assets/hero1.jpg"
-import driveway1 from "./../assets/driveway1.jpg"
-import driveway2 from "./../assets/driveway2.jpg"
-import driveway3 from "./../assets/driveway3.png"
-import paver1 from "./../assets/paver1.jpg"
-import masonry2 from "./../assets/masonry2.jpg"
+import hero from "./../assets/images/42.jpeg";
+import driveway1 from "./../assets/images/0.jpeg";
+import driveway2 from "./../assets/images/1.jpeg";
+import driveway3 from "./../assets/images/2.jpeg";
+import paver1 from "./../assets/images/3.jpeg";
+import masonry2 from "./../assets/images/4.jpeg";
 import masonry3 from "./../assets/masonry3.jpg"
-import masonry5 from "./../assets/masonry5.jpg"
+import masonry5 from "./../assets/images/5.jpeg"
 import MasonryTile from "../components/MasonryTile";
 
 function Home(props) {
-    const style=`background-size:cover; background: url(${hero}) center center;`;
+    const style={'background-size': 'contain', 'background-repeat': 'no-repeat', background: `url(${hero}) center center`};
+    console.log(style)
     return (
         <>
             <section class={"hero is-primary is-medium"} style={style}>
 
-                <div class="hero-body ">
+                <div class="hero-body">
                     <div>
-
-                        <p class="title">
+                        <p class="title is-2">
                             Paving the Way to Success: Choose Gundam for Your Next Project
                             <br />
                             Pave the Way to a Beautiful Home: Our Expert Paving Services Can Transform Your Property
