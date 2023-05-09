@@ -1,9 +1,6 @@
-import ServiceCard from "../components/ServiceCard";
 
-import hero from "./../assets/images/42.jpeg";
-import driveway1 from "./../assets/images/0.jpeg";
-import driveway2 from "./../assets/images/1.jpeg";
-import driveway3 from "./../assets/images/2.jpeg";
+
+import hero from "./../assets/images/31.jpeg";
 import paver1 from "./../assets/images/3.jpeg";
 import masonry2 from "./../assets/images/4.jpeg";
 import masonry3 from "./../assets/masonry3.jpg"
@@ -11,36 +8,21 @@ import masonry5 from "./../assets/images/5.jpeg"
 import MasonryTile from "../components/MasonryTile";
 
 function Home(props) {
-    const style={background: `url(${hero}) center center`};
+    const style={background: ` url(${hero}) center center`};
     console.log(style)
     return (
         <>
-            <section class={"hero is-primary is-medium hero-background-image"} style={style}>
+            <section class={"hero is-primary is-medium module"} style={style}>
 
-                <div class="hero-body">
+                <div class="hero-body module-inside">
                     <div>
                         <p class="title is-2">
-                            Paving the Way to Success: Choose Gundam for Your Next Project
-                            <br />
-                            Pave the Way to a Beautiful Home: Our Expert Paving Services Can Transform Your Property
+                        Our team of experts provides top-quality interlocking solutions that are tailored to your specific needs, ensuring long-lasting beauty and functionality for your outdoor spaces.
                         </p>
                     </div>
                 </div>
             </section>
-            <section class="section pt-3 pb-0">
-                <h3 class="title is-3">Services</h3>
-                <div class="columns">
-                    <div class="column">
-                        <ServiceCard title='Paving and Asphalt Services' subtitle='We offer paving services including new construction, resurfacing, and repairs.' img={driveway1} />
-                    </div>
-                    <div class="column">
-                        <ServiceCard title='Excavation and Site Development' subtitle='We offer excavation services for new construction projects, grading, and drainage solutions.' img={driveway2} />
-                    </div>
-                    <div class="column">
-                        <ServiceCard title='Technology Consulting' subtitle='Our technology consulting services include market analysis, product development, and go-to-market strategy.' img={driveway3} />
-                    </div>
-                </div>
-            </section>
+          
             <section class="section pt-3">
                 <h3 class="title is-3">Top-quality Pavers</h3>
                 <div class="tile is-ancestor">
