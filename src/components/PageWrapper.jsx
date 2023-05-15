@@ -5,7 +5,7 @@ import Home from '../pages/Home';
 import Service from '../pages/Services';
 // import { baseUrl } from './../vite.config';
 // console.log()
-const baseUrl = '/paving/';
+const baseUrl = '/';
 const companyName = 'One General Construction';
 const phone = '6477401168';
 const email = 'OneGeneralConstruction@gmail.com';
@@ -27,10 +27,10 @@ function PageWrapper() {
                     <a class="navbar-item" href={'tel:' + phone}>
                         <button class="button is-primary is-outlined">Call Us At {phone}</button>
                     </a>
-                    <A class="navbar-item" href={baseUrl + 'services'}>
+                    <A class="navbar-item has-text-weight-bold" href={baseUrl + 'services'}>
                         Services
                     </A>
-                    <A class="navbar-item" href={baseUrl + 'about'}>
+                    <A class="navbar-item has-text-weight-bold" href={baseUrl + 'about'}>
                         About Us
                     </A>
                     {/* <A class="navbar-item" href={baseUrl+'contact'}>

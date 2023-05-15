@@ -5,7 +5,7 @@ import Service from './pages/Services';
 import PageWrapper from "./components/PageWrapper";
 // import { baseUrl } from './../vite.config';
 // console.log()
-const baseUrl = '/paving/';
+const baseUrl = '/';
 const companyName = 'One General Construction';
 const phone = '6477401168';
 const email = 'OneGeneralConstruction@gmail.com';
