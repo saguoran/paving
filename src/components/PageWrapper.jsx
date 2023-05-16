@@ -3,9 +3,9 @@ import { Route, Routes, A } from "@solidjs/router";
 import logo from '../assets/logo.png';
 import Home from '../pages/Home';
 import Service from '../pages/Services';
-// import { baseUrl } from './../vite.config';
+import { baseUrl } from '../App';
 // console.log()
-const baseUrl = '/';
+
 const companyName = 'One General Construction';
 const phone = '6477401168';
 const email = 'OneGeneralConstruction@gmail.com';
