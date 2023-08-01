@@ -6,7 +6,7 @@ import masonry2 from "./../assets/images/4.jpeg";
 import masonry3 from "./../assets/masonry3.jpg"
 import masonry5 from "./../assets/images/5.jpeg"
 import MasonryTile from "../components/MasonryTile";
-import og_image from '../assets/ogc-og_img.jpg';
+// import og_image from '../assets/ogc-og_img.jpg';
 const title = "One General Construction - Flagstone, Interlock, Landscaping, Power Wash";
 const description = "Our expert team creates beautiful outdoor spaces and ensures long-lasting durability. Contact us for all your landscaping and hardscaping needs.";
 const og_url = "https://ogc-web-30135.web.app";

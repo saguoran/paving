@@ -2,7 +2,7 @@
 import { render } from 'solid-js/web';
 import './index.css';
 import App from './App';
-import og_image from './assets/ogc-og_img.jpg';
+// import og_image from './assets/ogc-og_img.jpg';
 import { Router } from "@solidjs/router";
 
 
