@@ -6,58 +6,57 @@ import Service from '../pages/Services';
 import { baseUrl } from '../App';
 // console.log()
 
-const companyName = 'One General Construction';
+const title = 'One General Construction';
+const description = 'Flagstone, Interlock, Landscaping, Power Wash';
 const phone = '6477401168';
 const email = 'OneGeneralConstruction@gmail.com';
 const location = '47 Thorncliffe Park Dr, East York, ON M4H 1J5';
 
 function PageWrapper() {
+    const routes = [];
     return <>
-        {/* <div class="container"> */}
-
-        <nav class="navbar" role="navigation" aria-label="main navigation">
-            <div class="navbar-brand">
-                <A class="navbar-item" href={baseUrl}>
-                    <img src={logo} width="28" height="28"> </img>
-                    <span class="title is-4 ml-1">{companyName}</span>
+    
+        <div className="shadow-box">
+            <nav role="navigation" className="max-width-1200" aria-label="main navigation">
+                <A href={baseUrl}>
+                    <img src={logo}> </img>
+                    <div>
+                        <p className="site-title">{title}</p>
+                        <p className="site-description">{description}</p>
+                    </div>
                 </A>
-            </div>
-            <div class="navbar-menu is-active">
-                <div class="navbar-end">
-                    <a class="navbar-item" href={'tel:' + phone}>
-                        <button class="button is-primary is-outlined">Call Us At {phone}</button>
-                    </a>
-                    <A class="navbar-item has-text-weight-bold" href={baseUrl + 'services'}>
+
+                <ul>
+                    {/* <li> <A href={'tel:' + phone}>
+                    Call Us At 
+                    {phone}
+                </A></li> */}
+                    <li>  <A href={baseUrl + 'services'}>
                         Services
-                    </A>
-                    <A class="navbar-item has-text-weight-bold" href={baseUrl + 'about'}>
+                    </A></li>
+                    <li> <A href={baseUrl + 'about'}>
                         About Us
-                    </A>
-                    {/* <A class="navbar-item" href={baseUrl+'contact'}>
-          Contact Us
-        </A> */}
-                </div>
-            </div>
-        </nav>
-        {/* </div> */}
+                    </A></li>
+                </ul>
+            </nav>
+        </div>
         <Outlet />
         <footer class="footer p-0  mt-4">
             <div class="p-3">
+                <article class="is-flex is-justify-content-start is-align-items-center">
+                    <figure class="">
+                        <p class="image is-64x64">
+                            <img src={logo} />
+                        </p>
+                    </figure>
+                    <h3 class='title is-3 mx-2'>{title}</h3>
 
-            <article class="is-flex is-justify-content-start is-align-items-center">
-                <figure class="">
-                    <p class="image is-64x64">
-                        <img src={logo} />
-                    </p>
-                </figure>
-                <h3 class='title is-3 mx-2'>{companyName}</h3>
-
-            </article>
+                </article>
             </div>
             <div class="content px-3">
 
                 <p>
-                    Welcome to <strong>{companyName}</strong>, where we are passionate about providing our customers with the highest quality products and services in the technology industry. Our team of engineers and developers is constantly pushing the boundaries of innovation, and we are dedicated to helping our clients stay ahead of the curve.
+                    Welcome to <strong>{title}</strong>, where we are passionate about providing our customers with the highest quality products and services in the technology industry. Our team of engineers and developers is constantly pushing the boundaries of innovation, and we are dedicated to helping our clients stay ahead of the curve.
                 </p>
 
                 <div class="icon-text">
@@ -85,10 +84,14 @@ function PageWrapper() {
             </div>
             <iframe src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=%201%20Grafton%2047%20Thorncliffe%20Park%20Dr,%20East%20York,%20ON%20M4H%201J5Street+(One%20General%20Construction)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
             <p className="p-3">
-                COPYRIGHT &copy; 2023 {companyName}<br />
-                All content, trade names and/or trade dress, trademarks, artwork and associated imagery are trademarks and/or copyright material of their respective owners. All rights reserved.
+            All content, trade names and/or trade dress, trademarks, artwork and associated imagery are trademarks and/or copyright material of their respective owners. All rights reserved. <br />
+                &copy; 2023 {title}
+                
             </p>
         </footer>
+        <div class="scroll-container">
+  <a href="#top">🔝<br/>To Top</a>
+</div>
     </>
 }
 

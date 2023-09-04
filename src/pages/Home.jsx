@@ -10,25 +10,34 @@ import MasonryTile from "../components/MasonryTile";
 const title = "One General Construction - Flagstone, Interlock, Landscaping, Power Wash";
 const description = "Our expert team creates beautiful outdoor spaces and ensures long-lasting durability. Contact us for all your landscaping and hardscaping needs.";
 const og_url = "https://ogc-web-30135.web.app";
-
+import heroImage from './../assets/images/28.jpeg';
 import { MetaProvider, Title, Link, Meta } from '@solidjs/meta';
 
+const phone = '647-740-1168';
 function Home(props) {
-    const style={background: ` url(${hero}) center center`};
+    const style = { background: ` url(${hero}) center center` };
     console.log(style)
     return (
-        <>
-            <section class={"hero is-primary is-medium module"} style={style}>
-                <div class="hero-body module-inside">
-                    <div>
-                        <p class="title is-2">
-                        Our team of experts provides top-quality interlocking solutions that are tailored to your specific needs, ensuring long-lasting beauty and functionality for your outdoor spaces.
-                        </p>
+        <main>
+            <section>
+                <div class="hero ">
+                    <img src={heroImage}></img>
+                    <div className="max-width-1200 flex-center flex-direction_column width-height_100">
+                        <div className="opacity-background">
+                            <h1>
+                                Our team of experts provides top-quality interlocking solutions that are tailored to your specific needs, ensuring long-lasting beauty and functionality for your outdoor spaces.
+                            </h1>
+                            <address>
+                                <a href={'tel:' + phone} title={'phone: ' + phone}>
+                                    Call Us At <i>{phone}</i> Now
+                                </a>
+                            </address>
+                        </div>
                     </div>
                 </div>
             </section>
-          
-            <section class="section pt-3">
+
+            <section class="section pt-3 flow">
                 <h3 class="title is-3">Top-quality Pavers</h3>
                 <div class="tile is-ancestor">
                     <div class="tile is-vertical is-8">
@@ -43,7 +52,7 @@ function Home(props) {
                                     <MasonryTile title="Durability" content=" Pavers are extremely durable and can withstand heavy foot traffic and harsh weather conditions without cracking or fading." />
                                 </article>
                                 <article class="tile is-child">
-                                    <MasonryTile title="Versatility" content="Pavers come in a wide range of sizes, shapes, and colors, allowing for endless design possibilities to match any style or taste." img={paver1}/>
+                                    <MasonryTile title="Versatility" content="Pavers come in a wide range of sizes, shapes, and colors, allowing for endless design possibilities to match any style or taste." img={paver1} />
 
                                 </article>
                             </div>
@@ -57,7 +66,7 @@ function Home(props) {
                     </div>
                 </div>
             </section>
-        </>
+        </main>
 
     );
 }
