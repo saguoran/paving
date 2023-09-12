@@ -29,14 +29,27 @@ function Home(props) {
                             </h1>
                             <address>
                                 <a href={'tel:' + phone} title={'phone: ' + phone}>
-                                    Call Us At <i>{phone}</i> Now
+                                    Call Us At <i>{phone}</i>
                                 </a>
                             </address>
                         </div>
                     </div>
                 </div>
             </section>
+            <section className="background-color_1 color_1 height_100svh-h1">
+                <div className="max-width-1200" >
+                    <h1 className="text-transform_uppercase pt_1">Twitter</h1>
+                    <div className="max-width-600 flex-center flex-direction_column ">
+                        <div className="twitter-container">
+                            <a class="twitter-timeline" href="https://twitter.com/HoDaRaKe" data-tweet-limit="3" data-chrome="nofooter noborders noheader" data-height="800">Tweets by HoDaRaKe</a>
+                        </div>
+                        <p className="flex-center">
+                            <a href="https://twitter.com/HoDaRaKe" target="_blank" className="flex-center button_1">Follow Us</a>
+                        </p>
 
+                    </div>
+                </div>
+            </section>
             <section class="section pt-3 flow">
                 <h3 class="title is-3">Top-quality Pavers</h3>
                 <div class="tile is-ancestor">
