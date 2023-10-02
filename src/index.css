@@ -1,9 +1,11 @@
-* {
+*,
+*::after,
+*::before {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* border: 1px solid black ;
-  border-bottom: 1px solid black ; */
+  /* border: 1px solid black ; */
+  /* border-bottom: 1px solid black ;  */
 }
 
 /*! debug.css | MIT License | zaydek.github.com/debug.css */
@@ -21,43 +23,30 @@ html {
 }
 
 img {
-  max-width: 100%;
+  width: 100%;
   display: block;
+}
+p{
+  padding-inline: var(--space-s);
 }
 
 :root {
   --text: #333;
   --background: white;
   --primary: #694dcc;
-  --secondary: #eaceb2;
+  --secondary: rgb(125, 218, 159);
   --accent: #d4afaf;
   --ff-base: Arial, Helvetica, sans-serif;
   --ff-accent: 'Titillium Web', sans-serif, Helvetica, Arial;
 
-    /* Step -2: 12.50px → 9.17px */
-    --step--2: clamp(0.57rem, calc(0.86rem + -0.38vw), 0.78rem);
-
-    /* Step -1: 15.00px → 14.83px */
-    --step--1: clamp(0.93rem, calc(0.94rem + -0.02vw), 0.94rem);
-  
-    /* Step 0: 18.00px → 24.00px */
-    --step-0: clamp(1.13rem, calc(0.99rem + 0.68vw), 1.50rem);
-  
-    /* Step 1: 21.60px → 38.83px */
-    --step-1: clamp(1.35rem, calc(0.96rem + 1.96vw), 2.43rem);
-  
-    /* Step 2: 25.92px → 62.83px */
-    --step-2: clamp(1.62rem, calc(0.78rem + 4.19vw), 3.93rem);
-  
-    /* Step 3: 31.10px → 101.66px */
-    --step-3: clamp(1.94rem, calc(0.34rem + 8.02vw), 6.35rem);
-  
-    /* Step 4: 37.32px → 164.48px */
-    --step-4: clamp(2.33rem, calc(-0.56rem + 14.45vw), 10.28rem);
-  
-    /* Step 5: 44.79px → 266.14px */
-    --step-5: clamp(2.80rem, calc(-2.23rem + 25.15vw), 16.63rem);
-
+  --step--2: clamp(0.7038rem, 0.9666rem + -0.3895vw, 0.8888rem);
+  --step--1: clamp(0.9375rem, 1.0263rem + -0.1316vw, 1rem);
+  --step-0: clamp(1.125rem, 1.0724rem + 0.2632vw, 1.25rem);
+  --step-1: clamp(1.2656rem, 1.0969rem + 0.8434vw, 1.6663rem);
+  --step-2: clamp(1.4238rem, 1.088rem + 1.6789vw, 2.2213rem);
+  --step-3: clamp(1.6019rem, 1.0298rem + 2.8605vw, 2.9606rem);
+  --step-4: clamp(1.8019rem, 0.8987rem + 4.5158vw, 3.9469rem);
+  --step-5: clamp(2.0275rem, 0.6662rem + 6.8066vw, 5.2606rem);
 
 
       /* Space 3xs: 2px → 4px */
@@ -119,6 +108,7 @@ img {
    --fw-0: 400;
    --fw-1: 600;
    --fw-2: 900;
+
 }
 
 @media (prefers-color-scheme: dark) {
@@ -171,9 +161,12 @@ h1, h2, h3 {
 }
 
 h1{
-  font-size: var( --step-3);
+  font-size: var( --step-5);
   font-weight: var(--fw-2);
-  line-height: 1;
+  line-height: 1.2;
+}
+article h1{  
+  font-size: var( --step-4);
 }
 
 h2{
@@ -189,10 +182,34 @@ h3{
 }
 
 a {
+  position: relative;
   color: var(--primary);
   text-decoration: none;
   font-family: var(--ff-accent);
+  transition: color 200ms ease-out border 200ms ease-out;
 }
+
+
+
+a[data-animated='true']:hover{
+  color: var(--accent);
+}
+a[data-animated='true']::before{
+  content: '';
+  width: 0;
+}
+a[data-animated='true']::before{
+  transition: width 400ms ease-out;
+}
+a[data-animated='true']:hover::before{
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  background: var(--accent);
+}
+
 .shadow-box{  
   position: relative;
 }
@@ -217,7 +234,7 @@ a {
 
 
 .height_100svh-h1{
-  min-height: calc(100svh - var(--step-3) - var(--space-m) - var(--step-0) - var(--space-xs) - 50px);
+  height: 1050px;
 }
 .max-width-1200{  
   max-width: 1200px;  
@@ -246,7 +263,7 @@ a {
 nav {
   display: flex;
   justify-content: space-between;
-  padding: 1rem;
+  padding: var(--space-s);
 }
 
 .pt_1{
@@ -254,7 +271,10 @@ nav {
 }
 
 .pl_1{
-  padding-left: var(--space-s);
+  padding-left: var(--space-m);
+}
+.p1{
+  padding: var(--space-m);
 }
 .flex-center {
   display: flex;
@@ -270,10 +290,18 @@ nav {
   align-items: center;
   align-content: stretch;
 }
+.flex-end {
+  display: flex;
+  justify-content: end;
+  justify-items: center;
+  align-items: center;
+  align-content: stretch;
+}
 
 .column-gap_1{
   column-gap: var(--space-s);
 }
+
 .flex-direction_column{
   flex-direction: column; 
 }
@@ -299,7 +327,6 @@ nav ul a{
   height: 40px;
   line-height: 40px;
   display: block;
-  padding: auto; 
   text-align: center;
   font-weight: var(--fw-1);
 }
@@ -318,7 +345,7 @@ nav > a img{
   height: 56px;
 }
 nav > a p {
-  padding-left: .5rem;
+  padding-left: var(--space-xs);
   line-height: .9;
 }
  .site-title{
@@ -340,7 +367,7 @@ nav > a p {
   color: var(--background);
 }
 .hero h1{
-  font-size: var( --step-2);
+  font-size: var( --step-3);
   line-height: 1.1;
 }
 
@@ -355,26 +382,21 @@ nav > a p {
   /* filter: brightness(.8);   */
 }
 .hero address a{
-  font-size: var( --step-2);
+  font-style: normal;
+  font-size: var( --step-3);
   font-weight: var(--fw-2);
-  color: var(--background);
+  color: var(--secondary);
 }
 .hero address i{
   position: relative;
-  color: var(--accent);
+  text-decoration: underline;
 }
 
-.hero address i::before{
-  position: absolute;
-  width: 100%;
-  top: 1.2em;
-  border: .2rem solid var(--accent);
-  border-radius: .5rem;
-  content: '';
-}
 .opacity-background{
   position: relative;
-  padding: 1rem;
+  padding: var(--space-m);
+  width: 100svw;
+  height: max(40%, 500px);
 }
 .opacity-background::after{
   position: absolute;
@@ -384,8 +406,7 @@ nav > a p {
   height: 100%;
   width: 100%;
   z-index: -1;
-  /* background-color: var(--secondary); */
-  backdrop-filter: invert(.15) brightness(.6) ;
+  backdrop-filter: invert(.30) brightness(.3) ;
   opacity: 0.8;
   border-radius: .3rem;
   -webkit-box-shadow:  
@@ -432,6 +453,8 @@ nav > a p {
 
 .background-color_1{
   background-color: var(--secondary);
+  background-image: url('assets/bg.png');
+  background-size: cover;
 }
 .color_1{
   color:var(--background);
@@ -439,7 +462,8 @@ nav > a p {
 
 .button_1{
   min-width: 400px;
-  border: 1px solid var(--primary);
+  border: 1px solid var(--background);
+  color: var(--background);
   padding: var(--space-xs);
   margin: var(--space-m);
   box-sizing: content-box;
@@ -447,7 +471,38 @@ nav > a p {
 }
 
 .button_1:hover{
-  border: 1px solid var(--background);
   background-color: var(--primary);
-  color: var(--background);
+}
+
+
+@media (width < 1200px) {
+  nav{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .site-title{
+    font-size: var(--step-3);
+  }
+  .site-description{
+    font-size: var(--step-2);
+  }
+  nav > a img{
+    width: 60px;
+    height: 60px;
+  }
+  
+  nav li{
+    font-size: var(--step-2);
+    padding: var(--space-m);
+  }
+
+  .hero {
+    height: max(40svh, 800px);
+  }
+
+  body{
+    font-size:var(--step-1);
+  }
 }
